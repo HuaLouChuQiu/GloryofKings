@@ -8,6 +8,7 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     myResult: {},
+    display: "none",
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数
@@ -44,6 +45,11 @@ Page({
         }
       })
     }
+    // 显示加载图标
+    wx.showLoading({
+      title: '玩命加载中',
+    })
+   
     //战绩
     wx.request({
       url: app.globalData.http + 'myResult',
@@ -52,16 +58,16 @@ Page({
       success: function (res) {
         console.log(res.data.myResult)
         that.setData({ //此时OK
-          'myResult': res.data.myResult
+          'myResult': res.data.myResult,
+          'display': "block"
         })
+        // 隐藏加载框
+        wx.hideLoading();
       },
       fail: function (res) {
         console.log('错误' + ':' + res)
       }
     })
-
-  },
-  onShow: function () {
 
   },
   getUserInfo: function (e) {

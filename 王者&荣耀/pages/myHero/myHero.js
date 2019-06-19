@@ -8,6 +8,7 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     myHero: {},
+    display:"none",
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数
@@ -44,6 +45,10 @@ Page({
         }
       })
     }
+    // 显示加载图标
+    wx.showLoading({
+      title: '玩命加载中',
+    })
     //我的英雄
     wx.request({
       url: app.globalData.http + 'myHero',
@@ -52,16 +57,16 @@ Page({
       success: function (res) {
         console.log(res.data.myHero)
         that.setData({ //此时OK
-          'myHero': res.data.myHero
+          'myHero': res.data.myHero,
+          'display':"block"
         })
+        // 隐藏加载框
+        wx.hideLoading();
       },
       fail: function (res) {
         console.log('错误' + ':' + res)
       }
     })
-
-  },
-  onShow: function () {
 
   },
   getUserInfo: function (e) {

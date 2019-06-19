@@ -51,7 +51,10 @@ Page({
         }
       })
     }
-
+    // 显示加载图标
+    wx.showLoading({
+      title: '玩命加载中',
+    })
     //个人信息
     wx.request({
       url: app.globalData.http + 'person',
@@ -61,6 +64,8 @@ Page({
         that.setData({ //此时OK
           'person': res.data
         })
+        // 隐藏加载框
+        wx.hideLoading();
       },
       fail: function (res) {
         console.log('错误' + ':' + res)
@@ -93,11 +98,13 @@ Page({
         that.setData({
           'personHero': res.data.myHero
         })
+        
       },
       fail: function (res) {
         console.log('错误' + ':' + res)
       }
     })
+    
 
   },
   getUserInfo: function (e) {

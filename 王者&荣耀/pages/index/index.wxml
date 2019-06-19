@@ -60,6 +60,6 @@
     </view>
   </view>
 </block>
-  <!-- <view class='no'>没有更多了...</view> -->
+  <view class='no' style='display:{{display}}'>没有更多了...</view>
 </view>
 <!-- </view> -->

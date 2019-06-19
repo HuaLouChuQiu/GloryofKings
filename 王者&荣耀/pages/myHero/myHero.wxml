@@ -25,4 +25,4 @@
   
   </block>
 </view>
-<view class='foot'><text>仅显示常用的20个英雄</text></view>
+<view class='foot' style='display:{{display}}'><text>仅显示常用的20个英雄</text></view>

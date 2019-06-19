@@ -27,5 +27,5 @@
       </view>
     </view>
   </block>
-  <view class='no'>没有更多了...</view>
+  <view class='no' style='display:{{display}}'>只显示最近20场比赛</view>
 </view>
