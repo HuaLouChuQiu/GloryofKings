@@ -1,0 +1,65 @@
+<!--pages/index/index.wxml-->
+<!-- <view class='body'> -->
+<view class='bg'>
+  <image class='bg-image' mode='aspectFit' src='../../images/indexperson3.jpg'></image>
+  <view class='content'>
+    <view class='my'>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <text class="my-level">{{level}}</text>
+    </view>
+    <view class='area'>
+      <canvas id="myCanvas" canvas-id="firstCanvas"></canvas>
+     
+      <view class='result'>
+        <image class='re-image' wx:if="{{indexresult.hero.src.length>0}}" mode='aspectFit' src='../../images/hero/{{indexresult.hero.src}}'></image>
+        <view class='re-content'>
+          <text wx:if="{{indexresult.myEnding==1}}" class='con-1'>胜利</text>
+          <text wx:else class='con-3'>失败</text>
+          <view class='con-2'>
+            <image src='../../images/kill.png'></image>
+            <text>{{indexresult.myKill}}</text>
+            <image src='../../images/death.png'></image>
+            <text>{{indexresult.myDeath}}</text>
+            <image src='../../images/assisting.png'></image>
+            <text>{{indexresult.myAssisting}}</text>
+          </view>
+        </view>
+        <view class='re-look' bindtap="bindViewTap">
+          <text>查看全部战绩</text>
+          <image src='../../images/goto.png'></image>
+        </view>
+      </view>
+      
+    </view>
+  </view>
+</view>
+<view class='friend'>
+  <text class='fri-tital'>好友新鲜事</text>
+
+ <block wx:for="{{friend}}" wx:for-index="i">
+  <view class='box'>
+    <view class='box-userImage'>
+      <image mode='aspectFit' src='../../images/friend/{{friend[i].friendName.src}}'></image>
+    </view>
+    <view class='box-content'>
+      <view class='box-con-text'>
+        <text class='bct1'>{{friend[i].friendName.user_name}}</text>
+        <text class='bct2'>{{friend[i].friendSay}}</text>
+      </view>
+      <view class='friend-level'>{{friend[i].friendLevel}}</view>
+      <view class='friend-result'>
+        <block wx:for="{{friend[i].friendGame}}" wx:for-index="ig">
+        <view class='fr-all'>
+          <image mode='aspectFit' src='../../images/hero/{{friend[i].friendGame[ig].hero.src}}'></image>
+          <text class='fr-text1'>{{friend[i].friendGame[ig].hero.hero_name}} 排位 | {{friend[i].friendGame[ig].friendKill}}杀/{{friend[i].friendGame[ig].friendDeath}}死/{{friend[i].friendGame[ig].friendAssisting}}助攻</text>
+          <text class='fr-text2'>{{friend[i].friendGame[ig].friendEnding}}</text>
+        </view>
+         </block>
+      </view>
+    </view>
+  </view>
+</block>
+  <!-- <view class='no'>没有更多了...</view> -->
+</view>
+<!-- </view> -->

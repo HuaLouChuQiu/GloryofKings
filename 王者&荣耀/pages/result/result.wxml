@@ -1,0 +1,31 @@
+<!--pages/result/result.wxml-->
+<view class='body'>
+  <view class='recent-result'>最近战绩</view>
+  <block wx:for="{{myResult}}" wx:for-index="i">
+    <view class='result'>
+      <image class='re-image' mode='aspectFit' src='../../images/hero/{{myResult[i].hero.src}}'></image>
+      <view class='re-content'>
+        <view>
+          <text wx:if="{{myResult[i].myEnding==1}}" class='con-1'>胜利</text>
+          <text wx:else class='con-3'>失败</text>
+          <text wx:if="{{myResult[i].myPai==1}}" class='con-4'>排位赛</text>
+          <text wx:else class='con-4'>王者峡谷</text>
+          <text class='con-4'>{{myResult[i].myFriendPai}}</text>
+        </view>
+        <view class='con-2'>
+          <image src='../../images/kill.png'></image>
+          <text>{{myResult[i].myKill}}</text>
+          <image src='../../images/death.png'></image>
+          <text>{{myResult[i].myDeath}}</text>
+          <image src='../../images/assisting.png'></image>
+          <text>{{myResult[i].myAssisting}}</text>
+        </view>
+      </view>
+      <view class='re-right'>
+        <view wx:if="{{myResult[i].myMVP==1}}" class='mvp'>MVP</view>
+        <text>{{myResult[i].myDate}}</text>
+      </view>
+    </view>
+  </block>
+  <view class='no'>没有更多了...</view>
+</view>

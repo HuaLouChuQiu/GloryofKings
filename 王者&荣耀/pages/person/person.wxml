@@ -1,0 +1,131 @@
+<!--pages/person/person.wxml-->
+<view class='bg'>
+  <image class='bg-image' mode='aspectFit' src='../../images/bg-person1.jpg'></image>
+  <!-- <view class='my'> -->
+  <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+  <!-- <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    <text class="my-level">{{level}}</text> -->
+  <!-- </view> -->
+  <!-- 基本数据 -->
+  <view class='bg-my'>
+    <text class='name'>{{userInfo.nickName}}</text>
+    <text class='name-Lv'>{{person.address}}   Lv{{person.gameLevel}}</text>
+    <view class='all'>
+      <view class='level'>
+        <image wx:if="{{person.myLevel.src.length>0}}" mode='aspectFit' src='../../images/level/{{person.myLevel.src}}'></image>
+        <view>{{person.myLevel.name}}{{person.myLevel.level}}</view>
+        <view> {{person.myLevel.star}} 星</view>
+      </view>
+      <view class='data'>
+        <view class='data-top'>
+          <view>
+            <text>{{person.myPlay}}</text>
+            <text class='explain'>总场次</text>
+          </view>
+          <view>
+            <text>{{person.myWin}}%</text>
+            <text class='explain'>胜率</text>
+          </view>
+          <view>
+            <text>{{person.myMVP}}</text>
+            <text class='explain'>MVP</text>
+          </view>
+        </view>
+        <view class='data-bottom'>
+          <view>
+            <text>{{person.myPower}}</text>
+            <text class='explain'>战斗力</text>
+          </view>
+          <view>
+            <text>{{person.myHero}}/{{person.allHero}}</text>
+            <text class='explain'>英雄</text>
+          </view>
+          <view>
+            <text>{{person.mySkin}}/{{person.skin}}</text>
+            <text class='explain'>皮肤</text>
+          </view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+  <!-- 最近战绩 -->
+  <view class='next'>
+    <view class='bg-1'>
+      <view class='recent-result'>
+        <view class='recent'>最近战绩</view>
+        <view class='re-look' bindtap="bindViewTap">
+          <text>全部</text>
+          <image src='../../images/goto.png'></image>
+        </view>
+      </view>
+      <block wx:for="{{result}}" wx:for-index="i">
+        <view class='result'>
+          <image  wx:if="{{result[i].hero.src.length>0}}" class='re-image' mode='aspectFit' src='../../images/hero/{{result[i].hero.src}}'></image>
+          <view class='re-content'>
+            <view>
+              <text wx:if="{{result[i].myEnding==1}}" class='con-1'>胜利</text>
+              <text wx:else class='con-3'>失败</text>
+              <text wx:if="{{result[i].myPai==1}}" class='con-4'>排位赛</text>
+              <text wx:else class='con-4'>王者峡谷</text>
+              <text class='con-4'>{{result[i].myFriendPai}}</text>
+            </view>
+            <view class='con-2'>
+              <image src='../../images/kill.png'></image>
+              <text>{{result[i].myKill}}</text>
+              <image src='../../images/death.png'></image>
+              <text>{{result[i].myDeath}}</text>
+              <image src='../../images/assisting.png'></image>
+              <text>{{result[i].myAssisting}}</text>
+            </view>
+          </view>
+          <view class='re-right'>
+            <view wx:if="{{result[i].myMVP==1}}" class='mvp'>MVP</view>
+            <text>{{result[i].myDate}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+    <!-- 常用英雄 -->
+    <view class='usual'>
+      <view class='recent-result'>
+        <view class='recent'>我的英雄</view>
+        <view class='re-look' bindtap="bindViewTap2">
+          <text>全部</text>
+          <image src='../../images/goto.png'></image>
+        </view>
+      </view>
+       <block wx:for="{{personHero}}" wx:for-index="i">
+      <view class='usual-box'>
+        <view class='b-left'>
+          <view class='bl-top'>
+            <text class='blt-1'>{{personHero[i].hero_level}}{{personHero[i].lei}}</text>
+            <text class='blt-2'>好友排名 NO.{{personHero[i].rank}}</text>
+          </view>
+          <view class='hero-name'>{{personHero[i].hero_name}}</view>
+          <view class='bl-data'>
+            <view>
+              <text class='explain'>总场数</text>
+              <text>{{personHero[i].myPlay}}</text>
+            </view>
+            <view>
+              <text class='explain'>总胜率</text>
+              <text>{{personHero[i].myWin}}%</text>
+            </view>
+            <view>
+              <text class='explain'>战力</text>
+              <text>{{personHero[i].myPower}}</text>
+            </view>
+          </view>
+        </view>
+        <view class='b-right'>
+          <image wx:if="{{personHero[i].src.length>0}}"  mode='aspectFit' src='../../images/myHero/{{personHero[i].src}}'></image>
+        </view>
+      </view>
+</block>
+      
+
+
+    </view>
+  </view>
+</view>

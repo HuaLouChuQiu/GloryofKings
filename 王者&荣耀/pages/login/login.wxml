@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="container">
+  <image class='login' src='../../images/login2.jpg'></image>
+  <view class="userinfo">
+    <button class='oBt' wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权登录</button>
+    <block wx:else>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <text bindtap="bindViewTap" class="userinfo-nickname">立即进入</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+    
+  </view>
+</view>

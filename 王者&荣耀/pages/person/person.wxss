@@ -1,0 +1,340 @@
+/* pages/person/person.wxss */
+.bg{
+  width: 750rpx;
+  height: 1200rpx;
+  background: #e6e5e5;
+}
+.bg-image{
+  position: absolute;
+  z-index: 0;
+  margin-top: -5rpx;
+  width: 100%;
+}
+.bg-my{
+  position: absolute;
+  padding-top: 80rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  margin-top: 150rpx;
+  border: 1rpx solid #e6e5e5;
+  box-shadow:0px 2px 2px 2px #e6e5e5;
+  border-radius: 20rpx;
+  margin-left: 35rpx;
+  width: 640rpx;
+  height: 400rpx;
+  z-index: 20;
+  background: #fff;
+}
+.bg-my .name{
+  text-align: center;
+  position: relative;
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #000;
+}
+.bg-my .name-Lv{
+  margin-left: 30rpx;
+  position: relative;
+  margin-top: 60rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+.userinfo-avatar{
+  position: absolute;
+  margin: 90rpx 0 0 60rpx;
+  z-index: 30;
+  border: 8rpx solid #fff;
+  border-radius: 50%;
+  width: 128rpx;
+  height: 128rpx
+}
+.userinfo-nickname{
+  color: #fff;
+  font-size: 25rpx;
+}
+.my-level{
+  color: #C08C52;
+  font-size: 28rpx;
+  margin-top: 2rpx;
+}
+
+/*数据*/
+.all{
+  width: 100%;
+  height: 340rpx;
+  display: flex;
+  flex-direction: row;
+  background: pink;
+}
+.all .level{
+  width:25%;
+  height: 100%;
+  background: #fff;
+}
+.level image{
+  text-align: center;
+  margin-top: 40rpx;
+  width: 100%;
+  height: 160rpx;
+}
+.level view{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 28rpx;
+  color: #333;
+}
+.data{
+  background: #fff;
+  width: 75%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.data .data-top{
+  height: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.data .data-bottom{
+  height: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.data .data-top view{
+   width: 33%;
+  height: 100%;
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.data .data-bottom view{
+  width: 33%;
+  height: 100%;
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+} 
+ .explain{
+  font-size: 28rpx;
+  color: #666;
+}
+
+
+.next{
+  position: absolute;
+  margin-top: 250rpx;
+  
+  width: 750rpx;
+  height: auto;
+  background: #e6e5e5;
+}
+
+/* 最近战绩 */
+.bg-1{
+  padding-top: 400rpx;
+  padding-bottom: 20rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  width: 711rpx;
+  height: auto;
+  z-index: 10;
+  background: #fff;
+}
+
+
+.recent-result{
+  width: 100%;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  height: 40rpx;
+  display: flex;
+  flex-direction: row;
+}
+.recent{
+  width: 610rpx;
+  line-height: 40rpx;
+  height: 40rpx;
+  font-size: 35rpx;
+}
+.re-look{
+  display: flex;
+  flex-direction: row;
+  width:100rpx;
+  text-align: center;
+  height: 40rpx;
+  line-height: 40rpx;
+  /* background: pink; */
+}
+.re-look text{
+  font-size: 26rpx;
+  color: #F4AB58
+}
+.re-look image{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+
+.result{
+  padding-top:20rpx;
+  padding-bottom: 20rpx; 
+  border-top: 2rpx solid #dfdede;
+  width: 100%;
+  height:120rpx;
+  display: flex;
+  flex-direction: row;
+  /* background: pink; */
+}
+.result .re-image{
+  width: 120rpx;
+  height: 120rpx;
+
+}
+.result .re-content{
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height:120rpx;
+}
+.re-content .con-1{
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 34rpx;
+  color: rgb(15, 153, 22);
+}
+.re-content .con-4{
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-left: 20rpx;
+  font-size: 26rpx;
+  color: #afafaf;
+}
+.re-content .con-3{
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 34rpx;
+  color: rgb(238, 61, 38);
+}
+.re-content .con-2{
+  margin-top: 20rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  display: flex;
+  flex-direction: row;
+}
+.re-content .con-2 image{
+  margin: 0 5rpx;
+  width: 25rpx;
+  height: 25rpx;
+}
+.re-content .con-2 text{
+  font-size: 25rpx;
+  color: #bfbfbf;
+}
+.re-right{
+  margin-top:10rpx;
+  width: 30%;
+  height: 120rpx;
+  line-height: 120rpx;
+  justify-content: center;  
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+ .re-right text{
+  height:70rpx;
+  /* padding-top: 20rpx; */
+  line-height: 70rpx;
+   font-size: 26rpx;
+  color: #bfbfbf
+} 
+
+.mvp{
+ width: 90rpx;
+ height:40rpx;
+ text-align: center;
+ line-height: 40rpx;
+ font-size: 28rpx;
+ color: #fff;
+ background: #f16303;
+ border-radius: 5rpx;
+ /* margin-bottom: 20rpx; */
+}
+
+
+/* 常用英雄 */
+.usual{
+  background: #fff;
+  margin-top: 20rpx;
+  padding-bottom: 20rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  width: 711rpx;
+  height: 700rpx;
+  z-index: 60;
+}
+
+.usual-box{
+  width: 100%;
+  height: 280rpx;
+  display: flex;
+  flex-direction: row;
+  border-top: 2rpx solid #e6e5e5; 
+}
+/*英雄数据*/
+.usual-box .b-left{
+  width: 65%;
+  height: 100%;
+  /* background: pink; */
+}
+.b-left .bl-top{
+  margin-top: 20rpx;
+}
+.bl-top .blt-1{
+  font-size: 28rpx;
+  color: #666;
+  margin-right: 20rpx;
+}
+.bl-top .blt-2{
+  font-size: 28rpx;
+  color: rgb(15, 153, 22);
+  margin-right: 20rpx;
+}
+.hero-name{
+  margin: 10rpx 0 20rpx 0;
+}
+
+.bl-data{
+  width: 100%;
+  height: 105rpx;
+  /* background: pink; */
+  display: flex;
+  flex-direction: row;
+}
+.bl-data view{
+  width: 33%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.bl-data view text{
+  width: 100%;
+  height: 50%;
+}
+/*英雄图片*/
+.usual-box .b-right{
+  width: 35%;
+  height: 100%;
+  /* background: blue; */
+}
+
+.b-right image{
+ width: 100%;
+ height: 280rpx;
+}

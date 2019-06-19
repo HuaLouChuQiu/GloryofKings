@@ -1,0 +1,28 @@
+<!--pages/myHero/myHero.wxml-->
+<view class='tital'>
+  <view class='left'>我的英雄</view>
+  <view class='right'>总场数</view>
+  <view class='right'>总胜率</view>
+  <view class='right'>总战力</view>
+</view>
+<view class='hero-box'>
+
+<block wx:for="{{myHero}}" wx:for-index="i">
+  <view class='hero'>
+    <view class='hero-left'>
+      <view class='left-data'>
+        <image mode='aspectFit' src='../../images/hero/{{myHero[i].hero.src}}'></image>
+      </view>
+      <view class='left-data'>
+         <view class='hero-lei'>{{myHero[i].hero_level}}{{myHero[i].hero.lei}}</view>
+         <view class='hero-name'>{{myHero[i].hero.hero_name}}</view>
+      </view>
+    </view>
+    <view class='hero-right '><text>{{myHero[i].myPlay}}</text></view>
+    <view class='hero-right'><text>{{myHero[i].myWin}}%</text></view>
+    <view class='hero-right'><text>{{myHero[i].myPower}}</text></view>
+  </view>
+  
+  </block>
+</view>
+<view class='foot'><text>仅显示常用的20个英雄</text></view>
